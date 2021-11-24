@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #0000FF;
+        }
+        .stretch-div {
+            list-style: none;
+        }
+        .stretch-div li {
+            width: 100px;
+            height: 50px;
+            padding: 10px 20px;
+            transition: 0.5s;
+            border-radius: 0 100px 100px 0;
+        }
+        .stretch-div span {
+            display: block;
+            text-align: right;
+        }
+
+        .display-none {
+            display: none !important;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        data-origin: 원래 사이즈
+        data-width: 변경할 사이즈
+    -->
+    <ul class="stretch-div">
+        <li data-origin="100" data-width="300" onmouseover="stretchWidth(this)" onmouseleave="reduceWidth(this)">
+            <span class="step">STEP 1</span>
+            <span class="text-toggle display-none">의뢰신청서 작성</span>
+        </li>
+        <li data-origin="100" data-width="300" onmouseover="stretchWidth(this)" onmouseleave="reduceWidth(this)">
+            <span class="step">STEP 2</span>
+            <span class="text-toggle display-none">방문접수</span>
+        </li>
+        <li data-origin="100" data-width="300" onmouseover="stretchWidth(this)" onmouseleave="reduceWidth(this)">
+            <span class="step">STEP 3</span>
+            <span class="text-toggle display-none">수수료 납부</span>
+        </li>
+        <li data-origin="100" data-width="300" onmouseover="stretchWidth(this)" onmouseleave="reduceWidth(this)">
+            <span class="step">STEP 4</span>
+            <span class="text-toggle display-none">아이 생산</span>
+        </li>
+        <li data-origin="100" data-width="300" onmouseover="stretchWidth(this)" onmouseleave="reduceWidth(this)">
+            <span class="step">STEP 5</span>
+            <span class="text-toggle display-none">배부 완료</span>
+        </li>
+        <li data-origin="100" data-width="300" onmouseover="stretchWidth(this)" onmouseleave="reduceWidth(this)">
+            <span class="step">STEP 6</span>
+            <span class="text-toggle display-none">귀가</span>
+        </li>
+    </ul>
+</body>
+
+<script>
+
+    // 마우스 올리면 크기 늘리기
+    function stretchWidth(target) {
+        let thisWidth = target.dataset.width;
+        target.style.width = thisWidth + 'px';
+        target.style.background = '#FFFFFF';
+        target.querySelector('.text-toggle').classList.remove('display-none');
+    }
+
+    // 마우스 떼면 크기 줄이기
+    function reduceWidth(target) {
+        let thisWidth = target.dataset.origin;
+        target.style.width = thisWidth + 'px';
+        target.style.background = 'transparent';
+        target.querySelector('.text-toggle').classList.add('display-none');
+    }
+</script>
+
+</html>
