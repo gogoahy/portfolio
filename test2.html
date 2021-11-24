@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #0000FF;
+        }
+        .stretch-div {
+            list-style: none;
+        }
+        .stretch-div li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100px;
+            height: 50px;
+            padding: 10px 20px 10px 0;
+            transition: 0.5s;
+            border-radius: 0 100px 100px 0;
+            background: transparent;
+        }
+        .stretch-div .text-toggle {
+            display: none;
+        }
+        .stretch-div span {
+            display: block;
+            text-align: right;
+        }
+        .stretch-div li:hover {
+            background: #FFFFFF;
+        }
+        
+        .stretch-div li:hover .text-toggle {
+            display: block;
+        }
+
+        #step1:hover {
+            width: 300px;
+        }
+
+        #step2:hover {
+            width: 300px;
+        }
+
+        #step3:hover {
+            width: 200px;
+        }
+
+        #step4:hover {
+            width: 400px;
+        }
+
+        #step5:hover {
+            width: 500px;
+        }
+
+        #step6:hover {
+            width: 600px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        data-origin: 원래 사이즈
+        data-width: 변경할 사이즈
+    -->
+    <ul class="stretch-div">
+        <li id="step1">
+            <span class="step">STEP 1</span>
+            <span class="text-toggle">의뢰신청서 작성</span>
+        </li>
+        <li id="step2">
+            <span class="step">STEP 2</span>
+            <span class="text-toggle">방문접수</span>
+        </li>
+        <li id="step3">
+            <span class="step">STEP 3</span>
+            <span class="text-toggle">수수료 납부</span>
+        </li>
+        <li id="step4">
+            <span class="step">STEP 4</span>
+            <span class="text-toggle">아이 생산</span>
+        </li>
+        <li id="step5">
+            <span class="step">STEP 5</span>
+            <span class="text-toggle">배부 완료</span>
+        </li>
+        <li id="step6">
+            <span class="step">STEP 6</span>
+            <span class="text-toggle">귀가</span>
+        </li>
+    </ul>
+</body>
+</html>
